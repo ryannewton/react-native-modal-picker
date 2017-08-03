@@ -107,7 +107,12 @@ export default class ModalPicker extends BaseComponent {
     renderSection(section) {
         return (
             <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
-                <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
+                <Text
+                    style={[styles.sectionTextStyle,this.props.sectionTextStyle]}
+                    allowFontScaling={false}
+                >
+                    {section.label}
+                </Text>
             </View>
         );
     }
@@ -116,7 +121,12 @@ export default class ModalPicker extends BaseComponent {
         return (
             <TouchableOpacity key={option.key} onPress={()=>this.onChange(option)}>
                 <View style={[styles.optionStyle, this.props.optionStyle]}>
-                    <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
+                    <Text
+                        style={[styles.optionTextStyle,this.props.optionTextStyle]}
+                        allowFontScaling={false}
+                    >
+                        {option.label}
+                    </Text>
                 </View>
             </TouchableOpacity>)
     }
@@ -142,7 +152,12 @@ export default class ModalPicker extends BaseComponent {
                 <View style={styles.cancelContainer}>
                     <TouchableOpacity onPress={this.close}>
                         <View style={[styles.cancelStyle, this.props.cancelStyle]}>
-                            <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
+                            <Text
+                                style={[styles.cancelTextStyle,this.props.cancelTextStyle]}
+                                allowFontScaling={false}
+                            >
+                                {this.props.cancelText}
+                            </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
